@@ -1,0 +1,17 @@
+@model Movie
+
+<div class="jumbotron">
+    <h1>@Model.Title</h1>
+</div>
+
+<p>Address: @Model.Address</p>
+<p>StartTime: @Model.StartTime</p>
+
+<p>Participants</p>
+<ul>
+    <li>@Model.Planner.FirstName</li>
+    @foreach (Join j in Model.AttendingUsers)
+    {
+        <li>@j.Joiner.FirstName</li>   
+    }
+</ul>

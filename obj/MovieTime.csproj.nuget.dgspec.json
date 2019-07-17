@@ -1,0 +1,72 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/hygogg/Desktop/MovieTime/MovieTime.csproj": {}
+  },
+  "projects": {
+    "/home/hygogg/Desktop/MovieTime/MovieTime.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/hygogg/Desktop/MovieTime/MovieTime.csproj",
+        "projectName": "MovieTime",
+        "projectPath": "/home/hygogg/Desktop/MovieTime/MovieTime.csproj",
+        "packagesPath": "/home/hygogg/.nuget/packages/",
+        "outputPath": "/home/hygogg/Desktop/MovieTime/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/hygogg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[2.1.4, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

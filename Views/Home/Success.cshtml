@@ -1,0 +1,59 @@
+<div class="jumbotron">
+    <h1>MovieTime</h1>
+</div>
+
+<a href="/logout"><button class="btn btn-info">Logout</button></a>
+<a href="/movie/new"><button class="btn btn-primary">Add Movie</button></a>
+
+<br><br>
+
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Address</th>
+        <th>Start Time</th>
+        <th>Planner</th>
+        <th>Actions</th>
+    </tr>
+    @foreach(Movie movie in ViewBag.Movies)
+    {
+        <tr>
+            <td>
+                <a href="/view/@movie.MovieId">
+                    @movie.Title @movie.Year
+                </a>
+            </td>
+            <td>@movie.Address</td>
+            <td>@movie.StartTime</td>
+            <td>@movie.Planner.FirstName</td>
+            <td>
+                @{
+                    if(@ViewBag.UserId == @movie.PlannerId)
+                    {
+                        <a href="/edit/@movie.MovieId">Edit</a>
+                        <a href="/delete/@movie.MovieId">Delete</a>
+                    }
+                    else
+                    {
+                        bool joined = false;
+                        foreach(Join j in @movie.AttendingUsers)
+                        {
+                            if(j.UserId == @ViewBag.UserId)
+                            {
+                                joined = true;
+                            }
+                        }
+                        if(joined)
+                        {
+                            <a href="/leave/@movie.MovieId">Leave</a>
+                        }
+                        else
+                        {
+                            <a href="/join/@movie.MovieId">Join</a>
+                        } 
+                    }
+                }
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,36 @@
+@model Movie
+
+<div class="jumbotron">
+    <h1>Edit @Model.Title</h1>
+</div>
+
+<form action="/update/@Model.MovieId" method="post">
+    <div class="form-group col-sm-6">
+        <label>Title:</label>
+        <span asp-validation-for="Title"></span>
+        <input type="text" name="Title" class="form-control" value="@Model.Title" />
+    </div>
+    <div class="form-group col-sm-6">
+        <label>Year:</label>
+        <span asp-validation-for="Year"></span>
+        <input type="number" name="Year" class="form-control" value="@Model.Year" />
+    </div>
+    <div class="form-group col-sm-12">
+        <label>Address:</label>
+        <span asp-validation-for="Address"></span>
+        <input type="text" name="Address" class="form-control" value="@Model.Address" />
+    </div>
+    <div class="form-group col-sm-6">
+        <label>Start Time:</label>
+        <span asp-validation-for="StartTime"></span>
+        <input type="datetime-local" name="StartTime" class="form-control" value=@Model.StartTime.ToString("yyyy-MM-ddThh:mm") />
+    </div>
+    <div class="form-group col-sm-6">
+        <label>Duration (minutes):</label>
+        <span asp-validation-for="Duration"></span>
+        <input type="number" name="Duration" class="form-control" value="@Model.Duration" />
+    </div>
+    <div class="col-sm-12">
+        <input type="submit" class="btn btn-caution" />
+    </div>
+</form>
